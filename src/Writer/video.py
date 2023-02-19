@@ -3,12 +3,12 @@ import cv2
 import numpy as np
 
 # Write the name of the video file here (must be in the same folder as the script) and its FPS
-cap = cv2.VideoCapture('Input\SpinningcubeAlphaMatteTransition.mov')
+cap = cv2.VideoCapture('Input\Rick.mp4')
 # make the fps higher if you want to speed up the framing process
 fps = 1000
 
 # LED Matrix size
-dim = (64, 64)
+dim = (16, 16)
 
 # Output file
 f = open("frames.txt", "w+")
@@ -40,6 +40,7 @@ while (cap.isOpened()):
     ret, frame = cap.read()
     if ret == False:
         break
+    print("Heyp")
     cv2.imshow('Original', frame)
     # If there are black borders, crop them here, otherwise comment this out
     frame = autocrop(frame, 50)
